@@ -1,0 +1,40 @@
+{% extends 'Quiz/dependencies.html' %}
+
+{% block content %}
+<style>
+    .result-card {
+        background-color: #f0f0f0; /* Light gray background */
+        border: 2px solid #333; /* Dark border */
+        border-radius: 10px; /* Rounded corners */
+        padding: 20px; /* Padding inside the card */
+        margin: 20px auto; /* Center the card horizontally */
+        max-width: 500px; /* Maximum width of the card */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Drop shadow */
+    }
+
+    .result-card img {
+        max-width: 100%; /* Make sure the image doesn't exceed the card width */
+        border-radius: 10px; /* Rounded corners for the image */
+        margin-bottom: 10px; /* Spacing between the image and text */
+    }
+
+    .result-card .card-body {
+        text-align: center; /* Center-align text inside the card */
+    }
+</style>
+
+<div class="container">
+    <div class="card result-card">
+        <img class="card-img-top" src="http://kmit.in/emagazine/wp-content/uploads/2018/02/karnataka-results.jpg" alt="Card image cap">
+        <div class="card-body">
+            <h5 class="card-title">Score: {{ score }}</h5>
+            <p class="card-text">Percentage: {{ percent }}%</p>
+            <p class="card-text">Time Taken: {{ time }} seconds</p>
+            <p class="card-text">Correct answers: {{ correct }}</p>
+            <p class="card-text">Incorrect answers: {{ wrong }}</p>
+            <p class="card-text">Total questions: {{ total }}</p>
+            <h5>All the best for next quiz!</h5>
+        </div>
+    </div>
+</div>
+{% endblock %}
